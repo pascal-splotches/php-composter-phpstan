@@ -1,0 +1,29 @@
+{
+  "name": "splotches/php-composter-phpstan",
+  "description": "Automatically install a git pre-commit hook to statically analyse your PHP files upon each commit using the phpstan.neon configuration.",
+  "type": "php-composter-action",
+  "require": {
+    "php-composter/php-composter": "^0.3.3",
+    "eloquent/pathogen": "^0.6.1",
+    "symfony/process": "^4.1",
+    "phpstan/phpstan": "^0.10.3"
+  },
+  "autoload": {
+    "psr-4": {
+      "PHPComposter\\PHPComposter\\PHPStan\\": "src/"
+    }
+  },
+  "extra": {
+    "php-composter-hooks": {
+      "20.pre-commit": "PHPComposter\\PHPComposter\\PHPStan\\Action::runPhpStan"
+    }
+  },
+  "license": "GPL v3",
+  "authors": [
+    {
+      "name": "Pascal Scheepers",
+      "email": "pascal@splotch.es"
+    }
+  ],
+  "minimum-stability": "stable"
+}
